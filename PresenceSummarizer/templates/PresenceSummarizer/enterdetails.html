@@ -1,0 +1,25 @@
+{% extends "PresenceSummarizer/base.html" %}
+{% block content %}
+    <div class="content-section">
+        <h2 class="heading">Scan a video to detect the presence of the person in that video.</h2>
+        <form method="POST" enctype="multipart/form-data">{% csrf_token %}
+            
+            <!-- {{form.as_p}} -->
+            <div class = "form-group">
+                <label for = "name">Enter the name of the person to be searched. </label>
+                <input id = "name" name = "name" type = "text" required>
+            </div>
+            <div class = "form-group">
+                <label for = "img">Upload the image of the person </label>
+                <input id = "img" name = "img" type = 'file' accept="image/*" required>
+            </div>
+            <div class = "form-group">
+                <label for = "vid">Upload a video to Scan </label>
+                <input id = "vid" name = "vid" type = 'file' accept="video/*" required>
+            </div>
+            <div class="form-group">
+                <button class="btn btn-outline-info" type="submit">Check Results</button>
+            </div>
+        </form>
+    </div>
+{% endblock content %}

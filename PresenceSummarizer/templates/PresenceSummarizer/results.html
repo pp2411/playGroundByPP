@@ -1,0 +1,33 @@
+{% extends "PresenceSummarizer/base.html" %}
+{% block content %}
+    <div class="content-section">
+        <h2 class="heading" >Results</h2>
+        {% if flag and result %}
+        <h3 class = "heading">Summary of presence of {{result.Name}} in the video.</h3>
+            <table class = "table">
+                <thead>
+                    <tr>
+                      <th>Time showed in</th>
+                      <th>Time went out</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                      {% for i in result.data %}
+                        <tr>
+                            <td>
+                                {{i.0}}
+                            </td>
+                            <td>
+                                {{i.1}}
+                            </td> 
+                        </tr>
+                      {% endfor %}
+                      <td><span style = "font-weight: bold;">Total Duration:</span></td>
+                      <td><span style = "font-weight: bold;">{{result.Duration}}</span></td>
+                  </tbody>
+            </table> 
+        {% else %}
+            Error! Please Try again with a different video.
+        {% endif %}
+    </div>
+{% endblock content %}
