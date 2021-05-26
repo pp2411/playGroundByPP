@@ -1,5 +1,5 @@
 Hey!
-This is Website deployed to add some of the miniprojects that i will work on.
+This is a Website deployed to add some of the miniprojects that i will work on.
 
 Feel free to fork my repo.
 Initial Instructions
